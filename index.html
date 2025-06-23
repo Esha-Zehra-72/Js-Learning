@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #field{
+            background:green;
+            color: white;
+            padding: 20px;
+            border: 20px;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>Lorem, ipsum</h1>
+    <input type="password" name="" id="password" placeholder="Enter your password">
+    <input type="password" name="" id="confirmpassword" placeholder="Confirm your password">
+    <button>Show Password</button>
+    <button id="submit">Submit</button>
+
+    <script>
+        const input = document.querySelector('input')
+        const confirmPassword = document.querySelector('#confirmpassword')
+        const button = document.querySelector('button')
+        const submit = document.querySelector('#submit')
+
+        // button.addEventListener('click', () => {
+        //     if (input.type === 'password') {
+        //         input.type = 'text';
+        //         confirmPassword.type = 'text';
+        //         button.textContent = 'Hide Password';
+        //         input.classList.add('field');
+        //     } else {
+        //         input.type = 'password';
+        //         confirmPassword.type = 'password';
+        //         button.textContent = 'Show Password';
+        //     }
+        // })
+        button.addEventListener('click', () => {
+          input.classList.toggle('text')
+        })
+        submit.addEventListener('click', () => {
+            if (input.value === confirmPassword.value) {
+                alert('Passwords match');
+            } else {
+                alert('Passwords do not match');
+            }
+
+        })
+
+
     
+    </script>
 </body>
+
 </html>
