@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="" placeholder="Enter Your Task Here...">
+    <button type="submit">Submit</button>
+    <ul>
+    </ul>
+
+    <script>
+        const input = document.querySelector('input')
+        const submit = document.querySelector("button")
+        const ul = document.querySelector('ul')
+        submit.addEventListener('click', () => {
+            if (input.value.trim !== '') {
+                const li = document.createElement('li')
+                li.innerHTML = input.value
+                const btn = document.createElement('button')
+                btn.innerHTML = 'Edit'
+                const dlt = document.createElement('button')
+                dlt.innerHTML = 'Delete'
+                li.append('', btn, '', dlt)
+                ul.appendChild(li)
+                input.value = ''
+
+                dlt.addEventListener('click', () => {
+                    li.remove()
+                })
+
+                btn.addEventListener('click', () => {
+                    input.value = li.firstChild.textContent.trim()
+                    li.remove()
+                })
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
