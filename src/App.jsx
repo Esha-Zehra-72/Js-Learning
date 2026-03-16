@@ -13,13 +13,13 @@ function App() {
   if (!isAuth) {
     return <Signup isAuth={setIsAuth} />;
   }
-
+  console.log("isAuth = ", isAuth);
   return (
     <>
       <h1>Hello Firebase</h1>
       <div>
         {room ? (
-          <Chat />
+          <Chat room={room} />
         ) : (
           <div>
             <p>Enter room name to join chat</p>
